@@ -1,0 +1,15 @@
+# Tested with Python 3.11-3.13. TensorFlow 2.16+ ships Keras 3, which is the
+# version the saved .h5 / .keras model files were written with.
+tensorflow>=2.16,<2.22
+numpy>=1.26
+pandas>=2.1
+scikit-learn>=1.4
+scipy>=1.11
+matplotlib>=3.8
+seaborn>=0.13
+pillow>=10.0
+streamlit>=1.50
+h5py>=3.10
+# Notebook execution
+jupyter>=1.0
+ipykernel>=6.0

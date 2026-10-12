@@ -1,0 +1,17 @@
+{
+  "selected_model": "MobileNetV2",
+  "image_size": [
+    224,
+    224
+  ],
+  "color_mode": "rgb",
+  "pixel_scaling": "divide by 255 -> [0, 1]",
+  "resize_interpolation": "bilinear",
+  "class_names": [
+    "glioma",
+    "meningioma",
+    "no_tumor",
+    "pituitary"
+  ],
+  "low_confidence_threshold": 0.7
+}

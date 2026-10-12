@@ -1,0 +1,23 @@
+# Dataset (large, third-party licensed) - download separately, see README
+data/
+
+# Training by-products that can be regenerated
+models/checkpoints/
+reports/training_logs/
+
+# Python / Jupyter
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Streamlit secrets
+.streamlit/secrets.toml

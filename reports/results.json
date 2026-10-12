@@ -1,0 +1,379 @@
+{
+  "quick_run": false,
+  "dataset": {
+    "images": 2443,
+    "classes": [
+      "glioma",
+      "meningioma",
+      "no_tumor",
+      "pituitary"
+    ],
+    "images_per_class": {
+      "glioma": 805,
+      "pituitary": 610,
+      "meningioma": 545,
+      "no_tumor": 483
+    },
+    "resolutions": [
+      "640x640"
+    ],
+    "invalid_files_removed": 0,
+    "exact_duplicates_removed": 0,
+    "same_source_pairs": 352,
+    "mirrored_pairs": 352,
+    "pairs_across_supplied_splits": 164,
+    "pairs_touching_supplied_test": 67
+  },
+  "split": {
+    "train": 1704,
+    "val": 372,
+    "test": 367
+  },
+  "class_weights": {
+    "0": 0.7634408602150538,
+    "1": 1.1181102362204725,
+    "2": 1.2603550295857988,
+    "3": 0.9976580796252927
+  },
+  "config": {
+    "seed": 42,
+    "image_size": [
+      224,
+      224
+    ],
+    "batch_size": 32,
+    "optimizer": "Adam",
+    "cnn_learning_rate": 0.0005,
+    "head_learning_rate": 0.001,
+    "fine_tune_learning_rate": 0.0001,
+    "max_epochs": {
+      "cnn": 40,
+      "head": 10,
+      "fine_tune": 12
+    },
+    "augmentation": {
+      "horizontal_flip": true,
+      "rotation": 0.03,
+      "zoom": 0.1,
+      "translation": 0.05,
+      "brightness": 0.1,
+      "contrast": 0.1
+    }
+  },
+  "validation_experiments": {
+    "Custom CNN - baseline": {
+      "accuracy": 0.9408602150537635,
+      "precision_macro": 0.9345511897569532,
+      "recall_macro": 0.9374032133178475,
+      "f1_macro": 0.9348793537444828,
+      "f1_weighted": 0.9400099159264357,
+      "roc_auc_ovr": 0.9947912265073425,
+      "f1_by_shift": {
+        "Original": 0.9348793537444828,
+        "Brightness +10%": 0.112210726611611,
+        "Brightness -10%": 0.6839130799859142,
+        "Contrast -20%": 0.8080355084330337,
+        "Contrast +20%": 0.9282839927198221
+      },
+      "f1_macro_robust": 0.112210726611611
+    },
+    "Custom CNN - tuned": {
+      "accuracy": 0.8333333333333334,
+      "precision_macro": 0.8234029890691908,
+      "recall_macro": 0.8325416813950748,
+      "f1_macro": 0.8217692726407897,
+      "f1_weighted": 0.8293620957477934,
+      "roc_auc_ovr": 0.9699305937067277,
+      "f1_by_shift": {
+        "Original": 0.8217692726407897,
+        "Brightness +10%": 0.7466688843193455,
+        "Brightness -10%": 0.6454087619480251,
+        "Contrast -20%": 0.659990498818772,
+        "Contrast +20%": 0.7398967467276655
+      },
+      "f1_macro_robust": 0.6454087619480251
+    },
+    "MobileNetV2 - frozen backbone": {
+      "accuracy": 0.8306451612903226,
+      "precision_macro": 0.8396058802308802,
+      "recall_macro": 0.828728601727011,
+      "f1_macro": 0.8261836813344313,
+      "f1_weighted": 0.8316410881082865,
+      "roc_auc_ovr": 0.9764293590598236,
+      "f1_by_shift": {
+        "Original": 0.8261836813344313,
+        "Brightness +10%": 0.8428356975678148,
+        "Brightness -10%": 0.8288549987234264,
+        "Contrast -20%": 0.8159096745889671,
+        "Contrast +20%": 0.8769607809266822
+      },
+      "f1_macro_robust": 0.8159096745889671
+    },
+    "MobileNetV2 - fine-tuned": {
+      "accuracy": 0.9166666666666666,
+      "precision_macro": 0.9168114197201787,
+      "recall_macro": 0.9230714201551953,
+      "f1_macro": 0.9183834006532752,
+      "f1_weighted": 0.9164708029332136,
+      "roc_auc_ovr": 0.9930437374590869,
+      "f1_by_shift": {
+        "Original": 0.9183834006532752,
+        "Brightness +10%": 0.9337565082266314,
+        "Brightness -10%": 0.9270691123728272,
+        "Contrast -20%": 0.9310407951078806,
+        "Contrast +20%": 0.9209380814553187
+      },
+      "f1_macro_robust": 0.9183834006532752
+    },
+    "EfficientNetB0 - frozen backbone": {
+      "accuracy": 0.8172043010752689,
+      "precision_macro": 0.8128507871617967,
+      "recall_macro": 0.8173077732330118,
+      "f1_macro": 0.8054720811560888,
+      "f1_weighted": 0.8146786711025807,
+      "roc_auc_ovr": 0.9704763647260767,
+      "f1_by_shift": {
+        "Original": 0.8054720811560888,
+        "Brightness +10%": 0.7873232636967689,
+        "Brightness -10%": 0.8139977461614312,
+        "Contrast -20%": 0.8127935019441589,
+        "Contrast +20%": 0.8412807570654702
+      },
+      "f1_macro_robust": 0.7873232636967689
+    },
+    "EfficientNetB0 - fine-tuned": {
+      "accuracy": 0.9220430107526881,
+      "precision_macro": 0.919283802333833,
+      "recall_macro": 0.9281963801780875,
+      "f1_macro": 0.9224615503499521,
+      "f1_weighted": 0.9217127202263709,
+      "roc_auc_ovr": 0.9936840374697474,
+      "f1_by_shift": {
+        "Original": 0.9224615503499521,
+        "Brightness +10%": 0.934761627180747,
+        "Brightness -10%": 0.9415272001056314,
+        "Contrast -20%": 0.9333974221226524,
+        "Contrast +20%": 0.9311842754840167
+      },
+      "f1_macro_robust": 0.9224615503499521
+    }
+  },
+  "robustness_shifts": {
+    "Original": null,
+    "Brightness +10%": [
+      "brightness",
+      0.1
+    ],
+    "Brightness -10%": [
+      "brightness",
+      -0.1
+    ],
+    "Contrast -20%": [
+      "contrast",
+      0.8
+    ],
+    "Contrast +20%": [
+      "contrast",
+      1.2
+    ]
+  },
+  "models": {
+    "Custom CNN": {
+      "configuration": "tuned",
+      "validation": {
+        "accuracy": 0.8333333333333334,
+        "precision_macro": 0.8234029890691908,
+        "recall_macro": 0.8325416813950748,
+        "f1_macro": 0.8217692726407897,
+        "f1_weighted": 0.8293620957477934,
+        "roc_auc_ovr": 0.9699305937067277,
+        "f1_by_shift": {
+          "Original": 0.8217692726407897,
+          "Brightness +10%": 0.7466688843193455,
+          "Brightness -10%": 0.6454087619480251,
+          "Contrast -20%": 0.659990498818772,
+          "Contrast +20%": 0.7398967467276655
+        },
+        "f1_macro_robust": 0.6454087619480251
+      },
+      "test": {
+        "accuracy": 0.8174386920980926,
+        "precision_macro": 0.810310471124466,
+        "recall_macro": 0.8072378825499744,
+        "f1_macro": 0.7984379693520509,
+        "f1_weighted": 0.8108524784654908,
+        "roc_auc_ovr": 0.951835108855433
+      },
+      "parameters": 423268,
+      "training_minutes": 8.371680854833334,
+      "inference_ms_per_image": 16.57508399989638,
+      "file_mb": 1.758336,
+      "test_f1_by_shift": {
+        "Original": 0.7984379693520509,
+        "Brightness +10%": 0.7006456734758151,
+        "Brightness -10%": 0.6534304159246194,
+        "Contrast -20%": 0.6497747228142678,
+        "Contrast +20%": 0.7507322531990465
+      },
+      "missed_tumors": 25,
+      "false_alarms": 10
+    },
+    "MobileNetV2": {
+      "configuration": "fine-tuned",
+      "validation": {
+        "accuracy": 0.9166666666666666,
+        "precision_macro": 0.9168114197201787,
+        "recall_macro": 0.9230714201551953,
+        "f1_macro": 0.9183834006532752,
+        "f1_weighted": 0.9164708029332136,
+        "roc_auc_ovr": 0.9930437374590869,
+        "f1_by_shift": {
+          "Original": 0.9183834006532752,
+          "Brightness +10%": 0.9337565082266314,
+          "Brightness -10%": 0.9270691123728272,
+          "Contrast -20%": 0.9310407951078806,
+          "Contrast +20%": 0.9209380814553187
+        },
+        "f1_macro_robust": 0.9183834006532752
+      },
+      "test": {
+        "accuracy": 0.9400544959128065,
+        "precision_macro": 0.9402833370433994,
+        "recall_macro": 0.9419273737227751,
+        "f1_macro": 0.9402680652680653,
+        "f1_weighted": 0.9405127116298778,
+        "roc_auc_ovr": 0.9939892322524607
+      },
+      "parameters": 2263108,
+      "training_minutes": 12.508461523433331,
+      "inference_ms_per_image": 145.76564549997784,
+      "file_mb": 9.591736,
+      "test_f1_by_shift": {
+        "Original": 0.9402680652680653,
+        "Brightness +10%": 0.9459217821059926,
+        "Brightness -10%": 0.9274335110167193,
+        "Contrast -20%": 0.9353516014124856,
+        "Contrast +20%": 0.9428141893567425
+      },
+      "missed_tumors": 0,
+      "false_alarms": 3
+    },
+    "EfficientNetB0": {
+      "configuration": "fine-tuned",
+      "validation": {
+        "accuracy": 0.9220430107526881,
+        "precision_macro": 0.919283802333833,
+        "recall_macro": 0.9281963801780875,
+        "f1_macro": 0.9224615503499521,
+        "f1_weighted": 0.9217127202263709,
+        "roc_auc_ovr": 0.9936840374697474,
+        "f1_by_shift": {
+          "Original": 0.9224615503499521,
+          "Brightness +10%": 0.934761627180747,
+          "Brightness -10%": 0.9415272001056314,
+          "Contrast -20%": 0.9333974221226524,
+          "Contrast +20%": 0.9311842754840167
+        },
+        "f1_macro_robust": 0.9224615503499521
+      },
+      "test": {
+        "accuracy": 0.9155313351498637,
+        "precision_macro": 0.9136214286485898,
+        "recall_macro": 0.913129807500764,
+        "f1_macro": 0.9116908537968016,
+        "f1_weighted": 0.9147035491325491,
+        "roc_auc_ovr": 0.9932435233106836
+      },
+      "parameters": 4054695,
+      "training_minutes": 18.068452490016664,
+      "inference_ms_per_image": 259.53062599978693,
+      "file_mb": 16.953584,
+      "test_f1_by_shift": {
+        "Original": 0.9116908537968016,
+        "Brightness +10%": 0.9240413123848266,
+        "Brightness -10%": 0.9241546618647458,
+        "Contrast -20%": 0.9231858001145208,
+        "Contrast +20%": 0.9394597365886779
+      },
+      "missed_tumors": 4,
+      "false_alarms": 4
+    }
+  },
+  "selected_model": "MobileNetV2",
+  "selected_per_class": {
+    "Glioma": {
+      "Precision": 0.9823,
+      "Recall": 0.9174,
+      "F1-score": 0.9487,
+      "Test images": 121
+    },
+    "Meningioma": {
+      "Precision": 0.8605,
+      "Recall": 0.9024,
+      "F1-score": 0.881,
+      "Test images": 82
+    },
+    "No Tumor": {
+      "Precision": 1.0,
+      "Recall": 0.9589,
+      "F1-score": 0.979,
+      "Test images": 73
+    },
+    "Pituitary": {
+      "Precision": 0.9184,
+      "Recall": 0.989,
+      "F1-score": 0.9524,
+      "Test images": 91
+    }
+  },
+  "selected_confusion_matrix": [
+    [
+      111,
+      9,
+      0,
+      1
+    ],
+    [
+      2,
+      74,
+      0,
+      6
+    ],
+    [
+      0,
+      2,
+      70,
+      1
+    ],
+    [
+      0,
+      1,
+      0,
+      90
+    ]
+  ],
+  "missed_tumors": [
+    0,
+    294
+  ],
+  "false_alarms": [
+    3,
+    73
+  ],
+  "confidence": {
+    "threshold": 0.7,
+    "flagged": 13,
+    "test_images": 367,
+    "errors_total": 22,
+    "errors_flagged": 6
+  },
+  "gradcam_head_focus": {
+    "activation_on_head": 0.7991954694191615,
+    "head_area": 0.5304704108205782,
+    "images": 60
+  },
+  "hardware": {
+    "cpu_threads": 2,
+    "gpus": 0
+  }
+}
