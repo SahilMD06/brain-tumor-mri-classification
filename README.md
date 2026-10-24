@@ -104,8 +104,8 @@ Precision and recall are macro averages on the test set. "Worst shift" is the lo
 ## 9. Installation
 
 ```bash
-git clone <your-repository-url>
-cd <repository-folder>
+git clone https://github.com/SahilMD06/brain-tumor-mri-classification.git
+cd brain-tumor-mri-classification
 python -m venv .venv
 .venv\Scripts\activate        # Windows   (macOS / Linux: source .venv/bin/activate)
 pip install -r requirements.txt
