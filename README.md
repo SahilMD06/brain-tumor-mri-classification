@@ -2,6 +2,8 @@
 
 Deep learning pipeline that classifies a 2-D brain MRI slice as **glioma**, **meningioma**, **pituitary tumor** or **no tumor**, compares a custom CNN with two pretrained networks, and serves the selected model in a Streamlit app.
 
+**Live demo:** https://brain-tumor-mri-classification-sahil-md.streamlit.app/
+
 > **Medical disclaimer.** This is an academic prototype for education and research. It is not a medical device, has not been clinically validated, and must not be used to diagnose, treat or rule out any condition.
 
 ![Grad-CAM examples](reports/figures/39_gradcam_examples.png)
@@ -134,6 +136,10 @@ Run all cells. A full run trains five configurations and takes about 80 minutes 
 The notebook writes the models to `models/`, the charts to `reports/figures/`, and the metrics to `reports/model_comparison.csv` and `reports/results.json`.
 
 ## 12. Streamlit execution
+
+The app is deployed on Streamlit Community Cloud: https://brain-tumor-mri-classification-sahil-md.streamlit.app/ (it may take a minute to wake up if it has been idle).
+
+To run it locally:
 
 ```bash
 streamlit run app/app.py
