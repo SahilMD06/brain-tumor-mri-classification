@@ -1,0 +1,11 @@
+# Packages for the hosted Streamlit app only (Streamlit Community Cloud reads
+# this file because it sits next to app.py). The CPU-only TensorFlow build keeps
+# the install small; Keras 3.15+ matches the version the models were saved with.
+tensorflow-cpu>=2.20,<2.22
+keras>=3.15
+numpy>=1.26
+pandas>=2.1
+pillow>=10.0
+matplotlib>=3.8
+h5py>=3.10
+streamlit>=1.50
